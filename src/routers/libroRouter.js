@@ -3,15 +3,14 @@ import { LibroController } from "../controllers/libroController.js";
 
 const libroRouter = Router();
 
-libroRouter.get("/json_file", LibroController);
+libroRouter.get("/json_file", LibroController.traerLibros);
 
-libroRouter.get("/book/:id",LibroController);
+// libroRouter.get("/book/:id", LibroController.traerLibroId);
 
-libroRouter.post("/book",LibroController);
+// libroRouter.post("/book", LibroController.agregarLibro);
 
-libroRouter.put("/book/:id",LibroController);
+// libroRouter.put("/book/:id", LibroController.actualizarLibro);
 
-libroRouter.delete("/book/:id",LibroController);
+// libroRouter.delete("/book/:id", LibroController.eliminarLibro);
 
-
-export {libroRouter}
+export { libroRouter };
