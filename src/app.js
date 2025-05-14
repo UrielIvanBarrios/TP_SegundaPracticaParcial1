@@ -1,15 +1,15 @@
-import dotenv from "dotenv";
-dotenv.config();
-
+import "./env.js";
 import express from "express";
 import { Config } from "./config/config.js";
 import { DataRouter } from "./routers/dataRouter.js";
 import { libroRouter } from "./routers/libroRouter.js";
+import morgan from "morgan";
 
 const app = express();
+app.use(morgan("dev"));
 
 app.use(express.json());
-
+console.log("DEBUG ENV PORT:", process.env.PORT);
 app.use("/api", libroRouter);
 app.use("/api", DataRouter);
 app.use((req, res) => {
